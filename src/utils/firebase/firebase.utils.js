@@ -29,7 +29,7 @@ const firebaseConfig = {
   appId: "1:457822622449:web:e99fc99b05eda3866ecf50",
 };
 
-const firebaseApp = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -52,7 +52,7 @@ export const addCollectionAndDocuments = async (
   const collectionRef = collection(db, collectionKey);
 
   const batch = writeBatch(db);
-  objectsToAdd.forEach((object) => {
+  objectsToAdd.forEach(object => {
     const docRef = doc(collectionRef, object.title.toLowerCase());
     batch.set(docRef, object);
   });
@@ -66,14 +66,7 @@ export const getCategoriesAndDocuments = async () => {
 
   const q = query(collectionRef);
   const querySnapshot = await getDocs(q);
-
-  const categoryMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
-    const { title, items } = docSnapshot.data();
-    acc[title.toLowerCase()] = items;
-    return acc;
-  }, {});
-
-  return categoryMap;
+  return querySnapshot.docs.map(docSnapshot => docSnapshot.data());
 };
 
 export const createUserDocumentFromAuth = async (
@@ -116,5 +109,5 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 
 export const signOutUser = async () => await signOut(auth);
 
-export const onAuthStateChangedListener = (callback) =>
+export const onAuthStateChangedListener = callback =>
   onAuthStateChanged(auth, callback);

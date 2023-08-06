@@ -1,2 +1,2 @@
 # Crown-Clothing
-Clothing App created with React
+E-commerce App | React powered by React-Redux/Redux-Saga

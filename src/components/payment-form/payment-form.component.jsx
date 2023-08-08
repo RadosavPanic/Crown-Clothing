@@ -27,11 +27,7 @@ const PaymentForm = () => {
 
     setIsProcessingPayment(true);
 
-    const url =
-      process.env.NODE_ENV === "production"
-        ? "https://crownclothing-onsite.netlify.app/.netlify/functions/create-payment-intent"
-        : "http://localhost:8888/.netlify/functions/create-payment-intent";
-
+    const url = "/.netlify/functions/create-payment-intent";
     const response = await fetch(url, {
       method: "post",
       headers: {

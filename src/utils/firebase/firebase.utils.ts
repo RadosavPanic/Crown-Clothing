@@ -80,14 +80,14 @@ export const getCategoriesAndDocuments = async (): Promise<Category[]> => {
   );
 };
 
-export type AdditionalInformation = {
-  displayName?: string;
-};
-
 export type UserData = {
   createdAt: Date;
   displayName: string;
   email: string;
+};
+
+export type AdditionalInformation = {
+  displayName?: string;
 };
 
 export const createUserDocumentFromAuth = async (

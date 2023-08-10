@@ -6,7 +6,8 @@ import {
 } from "../../store/cart/cart.selector";
 import { setIsCartOpen } from "../../store/cart/cart.action";
 
-import { ShoppingIcon, CartIconContainer, ItemCount } from "./cart-icon.styles";
+import { CartIconContainer, ItemCount } from "./cart-icon.styles";
+import { ReactComponent as ShoppingSvg } from "../../assets/shopping-bag.svg";
 
 const CartIcon = () => {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const CartIcon = () => {
 
   return (
     <CartIconContainer onClick={toggleIsCartOpen}>
-      <ShoppingIcon />
+      <ShoppingSvg style={{ width: "24px", height: "24px" }} />
       <ItemCount>{cartCount}</ItemCount>
     </CartIconContainer>
   );

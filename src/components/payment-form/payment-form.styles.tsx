@@ -14,7 +14,7 @@ export const FormContainer = styled.form`
   min-width: 500px;
 `;
 
-export const PaymentButton = styled(Button)`
+export const PaymentButton = styled(Button as any)`
   margin-left: auto;
   margin-top: 30px;
 `;

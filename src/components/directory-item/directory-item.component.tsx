@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { FC } from "react";
 
 import {
   BackgroundImage,
@@ -6,7 +7,14 @@ import {
   DirectoryItemContainer,
 } from "./directory-item.styles";
 
-const DirectoryItem = ({ category }) => {
+export type DirectoryItemProps = {
+  id: number;
+  title: string;
+  imageUrl: string;
+  route: string;
+};
+
+const DirectoryItem: FC<DirectoryItemProps> = (category) => {
   const { imageUrl, title, route } = category;
 
   const navigate = useNavigate();

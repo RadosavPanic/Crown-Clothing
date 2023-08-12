@@ -1,4 +1,3 @@
-import { UserData } from "../../utils/firebase/firebase.utils";
 import { useState, FormEvent } from "react";
 import { useSelector } from "react-redux";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
@@ -54,7 +53,7 @@ const PaymentForm = () => {
       payment_method: {
         card: cardDetails,
         billing_details: {
-          name: currentUser,
+          name: currentUser ? currentUser.displayName : "Guest",
         },
       },
     });

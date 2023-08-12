@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCartItems } from "../../store/cart/cart.selector";
 import { addItemToCart } from "../../store/cart/cart.action";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
+import { FC } from "react";
 
 import {
   ProductCartContainer,
@@ -10,8 +11,8 @@ import {
   Name,
   Price,
 } from "./product-card.styles";
-
-const ProductCard = ({ product }) => {
+import { CategoryItem } from "../../store/categories/category.types";
+const ProductCard: FC<CategoryItem> = (product) => {
   const { name, price, imageUrl } = product;
 
   const dispatch = useDispatch();

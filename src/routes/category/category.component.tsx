@@ -18,8 +18,10 @@ type CategoryRouteParams = {
 
 const Category = () => {
   const { category } = useParams<CategoryRouteParams>() as CategoryRouteParams;
+
   const categoriesMap = useSelector(selectCategoriesMap);
   const isLoading = useSelector(selectCategoriesIsLoading);
+
   const [products, setProducts] = useState(categoriesMap[category]);
 
   useEffect(() => {
@@ -35,7 +37,13 @@ const Category = () => {
         <CategoryContainer>
           {products &&
             products.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard
+                key={product.id}
+                id={product.id}
+                name={product.name}
+                price={product.price}
+                imageUrl={product.imageUrl}
+              />
             ))}
         </CategoryContainer>
       )}

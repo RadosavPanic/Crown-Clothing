@@ -1,3 +1,5 @@
+import { memo, useCallback } from "react";
+
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -11,19 +13,19 @@ import {
   CartItems,
 } from "./cart-dropdown.styles";
 
-const CartDropdown = () => {
+const CartDropdown = memo(() => {
   const cartItems = useSelector(selectCartItems);
   const navigate = useNavigate();
 
-  const goToCheckoutHandler = () => {
+  const goToCheckoutHandler = useCallback(() => {
     navigate("/checkout");
-  };
+  }, []);
 
   return (
     <CartDropdownContainer>
       <CartItems>
         {cartItems.length ? (
-          cartItems.map(item => <CartItem key={item.id} cartItem={item} />)
+          cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
         ) : (
           <EmptyMessage>Your cart is empty</EmptyMessage>
         )}
@@ -31,6 +33,6 @@ const CartDropdown = () => {
       <Button onClick={goToCheckoutHandler}>GO TO CHECKOUT</Button>
     </CartDropdownContainer>
   );
-};
+});
 
 export default CartDropdown;

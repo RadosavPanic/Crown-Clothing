@@ -10,11 +10,15 @@ import { Elements } from "@stripe/react-stripe-js";
 import { stripePromise } from "./utils/stripe/stripe.utils";
 
 import App from "./App";
-
-import reportWebVitals from "./reportWebVitals";
 import "./index.scss";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+import * as ServiceWorkerRegistration from "./serviceWorkerRegistration";
+import reportWebVitals from "./reportWebVitals";
+
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>
@@ -29,4 +33,5 @@ root.render(
   </React.StrictMode>
 );
 
+ServiceWorkerRegistration.register();
 reportWebVitals();

@@ -32,7 +32,7 @@ const PaymentForm = () => {
 
     setIsProcessingPayment(true);
 
-    const url = `${process.env.SERVER_URL}/.netlify/functions/create-payment-intent`;
+    const url = "/.netlify/functions/create-payment-intent";
     const response = await fetch(url, {
       method: "post",
       headers: {

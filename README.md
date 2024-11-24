@@ -12,6 +12,7 @@ Perfect for fashion enthusiasts seeking variety and convenience in one place.
 1. [Features](#features)
 2. [Tech Stack](#tech-stack)
 3. [Live Demo](#live-demo)
+4. [Other Code Versions](#other-code-versions)
 
 ## **Features**
 
@@ -29,7 +30,7 @@ Perfect for fashion enthusiasts seeking variety and convenience in one place.
 ### **Frontend**
 
 - **React and TypeScript:** Components based on React's JSX powered by TypeScript to ensure data safety and improving scalability.
-- **React-Redux with Redux Saga and Redux-Persist:** Data state managed by Redux's store which uses reducers, middleware and persist configuration to ensure state persist between page loads. Reducer Actions are powered by Redux-Saga.
+- **React-Redux, Redux-Saga and Redux-Persist:** Application state managed by Redux's store which uses reducers, middleware and persist configuration to ensure state persist between page loads. Reducer Actions are powered by Redux-Saga.
 - **React Router DOM:** Ensures client-side navigation, along with lazy loading of modules for more efficient loads and suspense for smooth transitions.
 - **Styled Components:** Modular and reusable CSS in JS components for styling.
 
@@ -45,3 +46,11 @@ Check out the live version of **Crown Clothing** here:
 ⏩ [Crown-Clothing Live Demo](https://crownclothing-onsite.netlify.app)
 
 Explore the full functionality of the application, including browsing products, managing your cart, and secure checkout.
+
+## **Other Code Versions**
+
+There are 3 code versions of **Crown Clothing**:
+
+- Crown-Clothing (current repository): Redux-Saga and TypeScript version
+- [Crown-Clothing-V2](https://github.com/RadosavPanic/Crown-Clothing-V2): Redux-Toolkit version
+- [Crown-Clothing-graphql](https://github.com/RadosavPanic/Crown-Clothing-graphql): Context API with Apollo GraphQL version

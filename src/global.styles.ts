@@ -23,4 +23,16 @@ a {
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 600px){
+  body {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 400px){
+  body {
+    padding: 20px 10px;
+  }
+}
+
 `;

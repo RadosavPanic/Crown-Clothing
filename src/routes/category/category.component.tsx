@@ -7,7 +7,11 @@ import {
   selectCategoriesIsLoading,
 } from "../../store/categories/category.selector";
 
-import { CategoryContainer, Title } from "./category.styles";
+import {
+  CategoryContainer,
+  CategoryFlexContainer,
+  Title,
+} from "./category.styles";
 
 import ProductCard from "../../components/product-card/product-card.component";
 import Spinner from "../../components/spinner/spinner.component";
@@ -34,18 +38,20 @@ const Category = () => {
       {isLoading ? (
         <Spinner />
       ) : (
-        <CategoryContainer>
-          {products &&
-            products.map((product) => (
-              <ProductCard
-                key={product.id}
-                id={product.id}
-                name={product.name}
-                price={product.price}
-                imageUrl={product.imageUrl}
-              />
-            ))}
-        </CategoryContainer>
+        <CategoryFlexContainer>
+          <CategoryContainer>
+            {products &&
+              products.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  id={product.id}
+                  name={product.name}
+                  price={product.price}
+                  imageUrl={product.imageUrl}
+                />
+              ))}
+          </CategoryContainer>
+        </CategoryFlexContainer>
       )}
     </Fragment>
   );

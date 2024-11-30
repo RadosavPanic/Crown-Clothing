@@ -6,7 +6,7 @@ import { AuthError, AuthErrorCodes } from "firebase/auth";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 
-import { SignUpContainer } from "./sign-up-form.styles";
+import { SignUpContainer, ButtonsContainer } from "./sign-up-form.styles";
 import { signUpStart } from "../../store/user/user.action";
 
 const defaultFormFields = {
@@ -91,7 +91,9 @@ const SignUpForm = () => {
           name="confirmPassword"
           value={confirmPassword}
         />
-        <Button type="submit">Sign up</Button>
+        <ButtonsContainer>
+          <Button type="submit">Sign up</Button>
+        </ButtonsContainer>
       </form>
     </SignUpContainer>
   );
